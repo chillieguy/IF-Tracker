@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    
     var body: some View {
         TabView{
             TrackerView()
@@ -27,13 +28,19 @@ struct MainView: View {
                     Label("Profile", systemImage: "person")
                 }
         }
+        .accentColor(.primary)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            MainView()
+                .preferredColorScheme(.light)
+                .previewDevice("iPhone 12")
+            MainView()
+                .preferredColorScheme(.dark)
+                .previewDevice("iPhone 12")
         }
     }
 }

@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		FF14D31C274AB01A009BB454 /* IF_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D31B274AB01A009BB454 /* IF_TrackerApp.swift */; };
-		FF14D31E274AB01A009BB454 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D31D274AB01A009BB454 /* ContentView.swift */; };
+		FF14D31E274AB01A009BB454 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D31D274AB01A009BB454 /* MainView.swift */; };
 		FF14D320274AB01E009BB454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF14D31F274AB01E009BB454 /* Assets.xcassets */; };
 		FF14D323274AB01E009BB454 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF14D322274AB01E009BB454 /* Preview Assets.xcassets */; };
 		FF14D32D274AB01E009BB454 /* IF_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D32C274AB01E009BB454 /* IF_TrackerTests.swift */; };
 		FF14D337274AB01E009BB454 /* IF_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D336274AB01E009BB454 /* IF_TrackerUITests.swift */; };
 		FF14D339274AB01E009BB454 /* IF_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D338274AB01E009BB454 /* IF_TrackerUITestsLaunchTests.swift */; };
+		FF14D347274AB5CA009BB454 /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D346274AB5CA009BB454 /* TrackerView.swift */; };
+		FF14D349274AB612009BB454 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D348274AB612009BB454 /* InfoView.swift */; };
+		FF14D34B274AB629009BB454 /* HistroyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D34A274AB629009BB454 /* HistroyView.swift */; };
+		FF14D34D274AB63A009BB454 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D34C274AB63A009BB454 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		FF14D318274AB01A009BB454 /* IF Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IF Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF14D31B274AB01A009BB454 /* IF_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IF_TrackerApp.swift; sourceTree = "<group>"; };
-		FF14D31D274AB01A009BB454 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF14D31D274AB01A009BB454 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FF14D31F274AB01E009BB454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF14D322274AB01E009BB454 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF14D328274AB01E009BB454 /* IF TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IF TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,10 @@
 		FF14D332274AB01E009BB454 /* IF TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IF TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF14D336274AB01E009BB454 /* IF_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IF_TrackerUITests.swift; sourceTree = "<group>"; };
 		FF14D338274AB01E009BB454 /* IF_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IF_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF14D346274AB5CA009BB454 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
+		FF14D348274AB612009BB454 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		FF14D34A274AB629009BB454 /* HistroyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistroyView.swift; sourceTree = "<group>"; };
+		FF14D34C274AB63A009BB454 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				FF14D31B274AB01A009BB454 /* IF_TrackerApp.swift */,
-				FF14D31D274AB01A009BB454 /* ContentView.swift */,
+				FF14D31D274AB01A009BB454 /* MainView.swift */,
+				FF14D345274AB599009BB454 /* Views */,
 				FF14D31F274AB01E009BB454 /* Assets.xcassets */,
 				FF14D321274AB01E009BB454 /* Preview Content */,
 			);
@@ -125,6 +134,17 @@
 				FF14D338274AB01E009BB454 /* IF_TrackerUITestsLaunchTests.swift */,
 			);
 			path = "IF TrackerUITests";
+			sourceTree = "<group>";
+		};
+		FF14D345274AB599009BB454 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF14D346274AB5CA009BB454 /* TrackerView.swift */,
+				FF14D348274AB612009BB454 /* InfoView.swift */,
+				FF14D34A274AB629009BB454 /* HistroyView.swift */,
+				FF14D34C274AB63A009BB454 /* ProfileView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF14D31E274AB01A009BB454 /* ContentView.swift in Sources */,
+				FF14D349274AB612009BB454 /* InfoView.swift in Sources */,
+				FF14D31E274AB01A009BB454 /* MainView.swift in Sources */,
 				FF14D31C274AB01A009BB454 /* IF_TrackerApp.swift in Sources */,
+				FF14D34B274AB629009BB454 /* HistroyView.swift in Sources */,
+				FF14D34D274AB63A009BB454 /* ProfileView.swift in Sources */,
+				FF14D347274AB5CA009BB454 /* TrackerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
