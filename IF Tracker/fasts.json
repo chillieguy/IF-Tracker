@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "16:8",
+        "description": "16 Hour Fast",
+        "info": "This is a 16 hour fast."
+    },
+    {
+        "id": 2,
+        "name": "18:6",
+        "description": "18 Hour Fast",
+        "info": "This is an 18 hour fast."
+    },
+    {
+        "id": 3,
+        "name": "20:4",
+        "description": "20 Hour",
+        "info": "This is a 20 hour fast."
+    },
+    {
+        "id": 4,
+        "name": "36 Hour",
+        "description": "36 Hour Fast",
+        "info": "This is a 36 hour fast."
+    },
+    {
+        "id": 5,
+        "name": "Multi-Day",
+        "description": "Multi-Day Fast",
+        "info": "This is a multi-day fast."
+    }
+]

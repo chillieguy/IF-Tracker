@@ -18,6 +18,13 @@
 		FF14D349274AB612009BB454 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D348274AB612009BB454 /* InfoView.swift */; };
 		FF14D34B274AB629009BB454 /* HistroyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D34A274AB629009BB454 /* HistroyView.swift */; };
 		FF14D34D274AB63A009BB454 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D34C274AB63A009BB454 /* ProfileView.swift */; };
+		FF1BE5B027A5EA0E007D6D71 /* Fasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BE5AF27A5EA0E007D6D71 /* Fasts.swift */; };
+		FF1BE5B227A5F356007D6D71 /* FastInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BE5B127A5F356007D6D71 /* FastInfoView.swift */; };
+		FF5A941027F9302200B81219 /* FastsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A940F27F9302200B81219 /* FastsInfo.swift */; };
+		FF5A941328035D4A00B81219 /* IFFastModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF5A941128035D4A00B81219 /* IFFastModel.xcdatamodeld */; };
+		FF81AD65275C28DC007F1EAE /* fasts.json in Resources */ = {isa = PBXBuildFile; fileRef = FF81AD64275C28DC007F1EAE /* fasts.json */; };
+		FF81AD67275C2B28007F1EAE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81AD66275C2B28007F1EAE /* Helpers.swift */; };
+		FF81AD69275C2D07007F1EAE /* Fast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81AD68275C2D07007F1EAE /* Fast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +59,13 @@
 		FF14D348274AB612009BB454 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		FF14D34A274AB629009BB454 /* HistroyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistroyView.swift; sourceTree = "<group>"; };
 		FF14D34C274AB63A009BB454 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FF1BE5AF27A5EA0E007D6D71 /* Fasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fasts.swift; sourceTree = "<group>"; };
+		FF1BE5B127A5F356007D6D71 /* FastInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastInfoView.swift; sourceTree = "<group>"; };
+		FF5A940F27F9302200B81219 /* FastsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastsInfo.swift; sourceTree = "<group>"; };
+		FF5A941228035D4A00B81219 /* IFFastModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IFFastModel.xcdatamodel; sourceTree = "<group>"; };
+		FF81AD64275C28DC007F1EAE /* fasts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fasts.json; sourceTree = "<group>"; };
+		FF81AD66275C2B28007F1EAE /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		FF81AD68275C2D07007F1EAE /* Fast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +118,14 @@
 			children = (
 				FF14D31B274AB01A009BB454 /* IF_TrackerApp.swift */,
 				FF14D31D274AB01A009BB454 /* MainView.swift */,
+				FF1BE5AE27A5E9F0007D6D71 /* Models */,
 				FF14D345274AB599009BB454 /* Views */,
 				FF14D31F274AB01E009BB454 /* Assets.xcassets */,
+				FF81AD64275C28DC007F1EAE /* fasts.json */,
+				FF81AD68275C2D07007F1EAE /* Fast.swift */,
+				FF81AD66275C2B28007F1EAE /* Helpers.swift */,
 				FF14D321274AB01E009BB454 /* Preview Content */,
+				FF5A941128035D4A00B81219 /* IFFastModel.xcdatamodeld */,
 			);
 			path = "IF Tracker";
 			sourceTree = "<group>";
@@ -143,8 +162,18 @@
 				FF14D348274AB612009BB454 /* InfoView.swift */,
 				FF14D34A274AB629009BB454 /* HistroyView.swift */,
 				FF14D34C274AB63A009BB454 /* ProfileView.swift */,
+				FF1BE5B127A5F356007D6D71 /* FastInfoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FF1BE5AE27A5E9F0007D6D71 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF1BE5AF27A5EA0E007D6D71 /* Fasts.swift */,
+				FF5A940F27F9302200B81219 /* FastsInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF81AD65275C28DC007F1EAE /* fasts.json in Resources */,
 				FF14D323274AB01E009BB454 /* Preview Assets.xcassets in Resources */,
 				FF14D320274AB01E009BB454 /* Assets.xcassets in Resources */,
 			);
@@ -277,12 +307,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5A941027F9302200B81219 /* FastsInfo.swift in Sources */,
 				FF14D349274AB612009BB454 /* InfoView.swift in Sources */,
+				FF81AD67275C2B28007F1EAE /* Helpers.swift in Sources */,
+				FF1BE5B227A5F356007D6D71 /* FastInfoView.swift in Sources */,
 				FF14D31E274AB01A009BB454 /* MainView.swift in Sources */,
+				FF81AD69275C2D07007F1EAE /* Fast.swift in Sources */,
+				FF5A941328035D4A00B81219 /* IFFastModel.xcdatamodeld in Sources */,
 				FF14D31C274AB01A009BB454 /* IF_TrackerApp.swift in Sources */,
 				FF14D34B274AB629009BB454 /* HistroyView.swift in Sources */,
 				FF14D34D274AB63A009BB454 /* ProfileView.swift in Sources */,
 				FF14D347274AB5CA009BB454 /* TrackerView.swift in Sources */,
+				FF1BE5B027A5EA0E007D6D71 /* Fasts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +487,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,7 +517,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,6 +667,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FF5A941128035D4A00B81219 /* IFFastModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF5A941228035D4A00B81219 /* IFFastModel.xcdatamodel */,
+			);
+			currentVersion = FF5A941228035D4A00B81219 /* IFFastModel.xcdatamodel */;
+			path = IFFastModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FF14D310274AB01A009BB454 /* Project object */;
 }

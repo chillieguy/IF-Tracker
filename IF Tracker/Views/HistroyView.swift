@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HistroyView: View {
+    @State var fasts = "Fast"
+    
     var body: some View {
         Text("Histroy View")
     }

@@ -9,7 +9,13 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text("Profile View")
+        GroupBox{
+            Text("Profile View")
+        } label: {
+            Label("Profile View", systemImage: "music.note")
+                .foregroundColor(.secondary)
+        }
+        .padding()
     }
 }
 
