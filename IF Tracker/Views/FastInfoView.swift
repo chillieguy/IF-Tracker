@@ -19,7 +19,7 @@ struct FastInfoView: View {
                         .font(.title)
                         .fixedSize(horizontal: false, vertical: true)
                     Text(fastsInfo.summary)
-                        .font(.caption)
+                        .font(.body)
                 }
 //                Image(fastsInfo.imageName)
 //                    .resizable()

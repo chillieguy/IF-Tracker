@@ -22,9 +22,8 @@
 		FF1BE5B227A5F356007D6D71 /* FastInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BE5B127A5F356007D6D71 /* FastInfoView.swift */; };
 		FF5A941027F9302200B81219 /* FastsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A940F27F9302200B81219 /* FastsInfo.swift */; };
 		FF5A941328035D4A00B81219 /* IFFastModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF5A941128035D4A00B81219 /* IFFastModel.xcdatamodeld */; };
-		FF81AD65275C28DC007F1EAE /* fasts.json in Resources */ = {isa = PBXBuildFile; fileRef = FF81AD64275C28DC007F1EAE /* fasts.json */; };
+		FF5A9416280361E000B81219 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5A9415280361E000B81219 /* CoreDataManager.swift */; };
 		FF81AD67275C2B28007F1EAE /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81AD66275C2B28007F1EAE /* Helpers.swift */; };
-		FF81AD69275C2D07007F1EAE /* Fast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81AD68275C2D07007F1EAE /* Fast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +62,8 @@
 		FF1BE5B127A5F356007D6D71 /* FastInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastInfoView.swift; sourceTree = "<group>"; };
 		FF5A940F27F9302200B81219 /* FastsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastsInfo.swift; sourceTree = "<group>"; };
 		FF5A941228035D4A00B81219 /* IFFastModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IFFastModel.xcdatamodel; sourceTree = "<group>"; };
-		FF81AD64275C28DC007F1EAE /* fasts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fasts.json; sourceTree = "<group>"; };
+		FF5A9415280361E000B81219 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FF81AD66275C2B28007F1EAE /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		FF81AD68275C2D07007F1EAE /* Fast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,11 +116,10 @@
 			children = (
 				FF14D31B274AB01A009BB454 /* IF_TrackerApp.swift */,
 				FF14D31D274AB01A009BB454 /* MainView.swift */,
+				FF5A941428035EF800B81219 /* Managers */,
 				FF1BE5AE27A5E9F0007D6D71 /* Models */,
 				FF14D345274AB599009BB454 /* Views */,
 				FF14D31F274AB01E009BB454 /* Assets.xcassets */,
-				FF81AD64275C28DC007F1EAE /* fasts.json */,
-				FF81AD68275C2D07007F1EAE /* Fast.swift */,
 				FF81AD66275C2B28007F1EAE /* Helpers.swift */,
 				FF14D321274AB01E009BB454 /* Preview Content */,
 				FF5A941128035D4A00B81219 /* IFFastModel.xcdatamodeld */,
@@ -174,6 +171,14 @@
 				FF5A940F27F9302200B81219 /* FastsInfo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FF5A941428035EF800B81219 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FF5A9415280361E000B81219 /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +285,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF81AD65275C28DC007F1EAE /* fasts.json in Resources */,
 				FF14D323274AB01E009BB454 /* Preview Assets.xcassets in Resources */,
 				FF14D320274AB01E009BB454 /* Assets.xcassets in Resources */,
 			);
@@ -312,8 +316,8 @@
 				FF81AD67275C2B28007F1EAE /* Helpers.swift in Sources */,
 				FF1BE5B227A5F356007D6D71 /* FastInfoView.swift in Sources */,
 				FF14D31E274AB01A009BB454 /* MainView.swift in Sources */,
-				FF81AD69275C2D07007F1EAE /* Fast.swift in Sources */,
 				FF5A941328035D4A00B81219 /* IFFastModel.xcdatamodeld in Sources */,
+				FF5A9416280361E000B81219 /* CoreDataManager.swift in Sources */,
 				FF14D31C274AB01A009BB454 /* IF_TrackerApp.swift in Sources */,
 				FF14D34B274AB629009BB454 /* HistroyView.swift in Sources */,
 				FF14D34D274AB63A009BB454 /* ProfileView.swift in Sources */,

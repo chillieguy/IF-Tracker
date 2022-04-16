@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct IF_TrackerApp: App {
+    
+    let persistentContainer = CoreDataManager.shared.persistentContainer
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView().environment(\.managedObjectContext, persistentContainer.viewContext)
         }
     }
 }
