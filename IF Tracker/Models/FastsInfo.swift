@@ -8,6 +8,7 @@
 import Foundation
 
 struct FastsInfo: Identifiable {
+    
     let id = UUID()
     let name: String
     let summary: String
