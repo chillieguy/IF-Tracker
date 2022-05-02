@@ -10,7 +10,9 @@ import CoreData
 
 class CoreDataManager {
     
+    // Setup Coredata persistance
     let persistentContainer: NSPersistentContainer
+    // Use global variable to store Coredata manager
     static let shared: CoreDataManager = CoreDataManager()
     
     private init() {

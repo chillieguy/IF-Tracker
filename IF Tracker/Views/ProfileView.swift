@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @State private var isShowingPrivacyPolicyView = false
+
     var body: some View {
-        GroupBox{
-            Text("Profile View")
-        } label: {
-            Label("Profile View", systemImage: "music.note")
-                .foregroundColor(.secondary)
+        NavigationView {
+            VStack {
+                NavigationLink(destination: Text("Privacy Policy"), isActive: $isShowingPrivacyPolicyView) { EmptyView() }
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button("Privacy Policy") {
+                        isShowingPrivacyPolicyView = true
+                    }
+                    .padding(20)
+                }
+            }
+            .navigationTitle("Profile")
         }
-        .padding()
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    private func handleButton() {
+        print("Pressed")
     }
 }
 

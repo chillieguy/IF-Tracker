@@ -7,14 +7,17 @@
 
 import Foundation
 
+// Model to store the fasting length info
 struct FastsInfo: Identifiable {
     
     let id = UUID()
     let name: String
     let summary: String
-    let imageName: String
+    let imageName: String // Not implemented
 }
 
+// Extension on the FastInfo model to return the name and summary of the fasts
+// Potential to move to online storage to allow for remote updating
 extension FastsInfo {
     static var data: [FastsInfo] {
         return [

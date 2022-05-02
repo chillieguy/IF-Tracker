@@ -10,10 +10,13 @@ import CoreData
 
 struct TrackerView: View {
     
+    // Init a timer to update every 1 second
     var timer = Timer.publish(every: 1, tolerance: 0.5, on: .main, in: .common).autoconnect()
     
+    // Store a reference to the Coredata persistence container in the view
     @Environment(\.managedObjectContext) private var viewContext
     
+    // Variables to capture fast progress and update the view
     @State var progressValue: Float = 0.0
     @State var fastInProgress: Bool = false
     @State var start: Date = Date.now
@@ -24,89 +27,111 @@ struct TrackerView: View {
     
 
     var body: some View {
-        ZStack {
-            VStack {
-                Spacer()
-                Section("How many hours to fast:") {
-                    Picker("Fasting Length", selection: $selectedLength) {
-                        ForEach(Length.allCases) { length in
-                            Text(length.title).tag(length)
-                        }
-                    }.pickerStyle(.segmented)
-                }
-                Text(fastInProgress ? "Fast Time: \(convertCountToTime(count: fastCount))" : "")
-                ProgressBar(progress: self.$progressValue)
-                    .frame(width: 150.0, height: 150.0)
-                    .padding(40.0)
-                
-                Button(action: {
-                    self.handleButtonClick()
-                    self.fastInProgress.toggle()
-                }) {
-                    HStack {
-//                        Image(systemName: "plus.rectangle.fill")
-                        Text(fastInProgress ? "Complete Fast" : "Start Fast")
+        NavigationView{
+            ZStack {
+                VStack {
+                    Spacer()
+                    Section("How many hours to fast:") {
+                        Picker("Fasting Length", selection: $selectedLength) {
+                            ForEach(Length.allCases) { length in
+                                Text(length.title).tag(length)
+                            }
+                        }.pickerStyle(.segmented)
                     }
-                    .padding(15.0)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15.0)
-                            .stroke(lineWidth: 2.0)
-                    )
+                    // Display field if fast currently inprogress
+                    Text(fastInProgress ? "Fast Time: \(convertCountToTime(count: fastCount))" : "")
+                    ProgressBar(progress: self.$progressValue)
+                        .frame(width: 150.0, height: 150.0)
+                        .padding(40.0)
+                    
+                    Button(action: {
+                        self.handleButtonClick()
+                        self.fastInProgress.toggle()
+                    }) {
+                        HStack {
+                            Text(fastInProgress ? "Complete Fast" : "Start Fast")
+                        }
+                        .padding(15.0)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15.0)
+                                .stroke(lineWidth: 2.0)
+                        )
+                    }
+                    
+                    Spacer()
+                }
+            }
+            .onAppear{
+                // Handle when view returns to focus
+                if UserDefaults.standard.object(forKey: "fastStartTime") != nil {
+                    start = UserDefaults.standard.object(forKey: "fastStartTime") as! Date
+                }
+                if UserDefaults.standard.object(forKey: "fastInProgress") != nil {
+                    fastInProgress = UserDefaults.standard.bool(forKey: "fastInProgress")
                 }
                 
-                Spacer()
+               
             }
-        }
-        .onAppear{
-            if UserDefaults.standard.object(forKey: "fastStartTime") != nil {
-                start = UserDefaults.standard.object(forKey: "fastStartTime") as! Date
+            .onDisappear{
+                
             }
-            if UserDefaults.standard.object(forKey: "fastInProgress") != nil {
-                fastInProgress = UserDefaults.standard.bool(forKey: "fastInProgress")
-            }
-            
-           
+            // Start the timer
+            .onReceive(timer, perform: { _ in
+                updateTime()
+            })
+            .navigationTitle("Tracking")
         }
-        .onDisappear{
-            
-        }
-        .onReceive(timer, perform: { _ in
-            updateTime()
-        })
+        .navigationViewStyle(StackNavigationViewStyle())
+        
     }
     
+    /**
+    Take a count in as an int and return string representation
+     
+     Input: Int
+     
+     Cutput: String
+     */
     private func convertCountToTime(count: Int) -> String {
         var countString = ""
         
         if(count < 60) {
             countString += "\(count) seconds"
-        } else if(count < 3600) {
-            countString += "\(count / 60) minutes \(count % 60) seconds"
+        } else if(count < 60 * 60) {
+            countString += "\(count / 60) minutes"
+        } else {
+            countString += "\(count / 3600) hours and \((count / 60) % 60) minutes"
         }
         
         return countString
     }
     
+    /**
+    Update state variables with current time, target time if fast is inprogress
+     */
     private func updateTime() {
-        var targetLength = Double(selectedLength.rawValue) ?? 0.0
-        targetLength = targetLength * 3600
-        let targetDate = start.addingTimeInterval(targetLength)
-        
-        let currentTimeCount = Int(Date.now.timeIntervalSince1970 - start.timeIntervalSince1970)
-        let targetTimeCount = Int(targetDate.timeIntervalSince1970 - start.timeIntervalSince1970)
-        
-        fastTime = String(currentTimeCount)
-        
-//        print("Fasting Length: \(targetLength)")
-//        print("Target Date: \(targetDate)")
-//        print("Current Time Count: \(currentTimeCount)")
-//        print("Target Time Count: \(targetTimeCount)")
-        
-        fastCount = currentTimeCount
-        progressValue = Float(Double(currentTimeCount)/Double(targetTimeCount))
-//        print("Progress Value: \(progressValue)")
+        if(fastInProgress){
+            var targetLength = Double(selectedLength.rawValue) ?? 0.0
+            targetLength = targetLength * 3600
+            let targetDate = start.addingTimeInterval(targetLength)
+            
+            let currentTimeCount = Int(Date.now.timeIntervalSince1970 - start.timeIntervalSince1970)
+            let targetTimeCount = Int(targetDate.timeIntervalSince1970 - start.timeIntervalSince1970)
+            
+            fastTime = String(currentTimeCount)
+            
+            fastCount = currentTimeCount
+            progressValue = Float(Double(currentTimeCount)/Double(targetTimeCount))
+        } else {
+            fastTime = ""
+            fastCount = 0
+            progressValue = 0
+        }
     }
-        
+    
+    /**
+    Handle when the fast timer button is clicked.
+     */
     private func handleButtonClick() {
         if (fastInProgress == true) {
             stop = Date.now
@@ -121,6 +146,9 @@ struct TrackerView: View {
         }
     }
     
+    /**
+    Save the current fast into Coredata
+     */
     private func saveFast() {
         
         do{
@@ -135,7 +163,10 @@ struct TrackerView: View {
 }
 
 
-
+/**
+ Subview to display the progress circle
+ 
+ */
 struct ProgressBar: View {
     @Binding var progress: Float
     
@@ -160,6 +191,9 @@ struct ProgressBar: View {
     }
 }
 
+/**
+ Enum to handle all of the fasting length options
+ */
 enum Length: String, Identifiable, CaseIterable{
     
     var id: UUID {
@@ -173,6 +207,9 @@ enum Length: String, Identifiable, CaseIterable{
     case fortyeight = "48"
 }
 
+/**
+ Return the string representation fo each fast length
+ */
 extension Length {
     var title: String{
         switch self {

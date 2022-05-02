@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Model to store a fast
 struct Fasts: Identifiable, Hashable {
     var id: ObjectIdentifier
     var fastStart: Date
