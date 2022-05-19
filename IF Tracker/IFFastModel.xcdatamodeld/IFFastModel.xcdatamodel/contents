@@ -7,11 +7,13 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="fast" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="birthdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="weight" optional="YES" attributeType="String"/>
         <relationship name="fast" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fast" inverseName="user" inverseEntity="Fast"/>
     </entity>
     <elements>
         <element name="Fast" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="User" positionX="136.3264770507812" positionY="-152.7456359863281" width="128" height="73"/>
+        <element name="User" positionX="136.3264770507812" positionY="-152.7456359863281" width="128" height="89"/>
     </elements>
 </model>

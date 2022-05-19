@@ -61,7 +61,7 @@ struct HistroyView: View {
                             Spacer()
                                 // TODO - Add total fast time
                                 let time = Int(end.timeIntervalSince(start))
-                                Text("\(time)")
+                                Text("\(time / 3600) Hours")
                             }
                             .padding()
                         }

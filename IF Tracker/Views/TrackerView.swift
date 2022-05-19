@@ -98,9 +98,17 @@ struct TrackerView: View {
         if(count < 60) {
             countString += "\(count) seconds"
         } else if(count < 60 * 60) {
-            countString += "\(count / 60) minutes"
+            if((count / 60) % 60 == 1) {
+                countString += "\(count / 60) minute"
+            } else {
+                countString += "\(count / 60) minutes"
+            }
         } else {
+            if((count / 3600) % 3600 == 1) {
+                countString += "\(count / 3600) hour and \((count / 60) % 60) minutes"
+            } else {
             countString += "\(count / 3600) hours and \((count / 60) % 60) minutes"
+            }
         }
         
         return countString
